@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="title">
       <h1>Movies Worth Your Time</h1>
     </header>
 
@@ -28,9 +28,27 @@
     <main>
       <!-- Search bar for movie or tv show titles-->
       <section>
-        <p>Enter the movie or tv show title.</p>
+        <p class="subtitle">Enter the movie or tv show title.</p>
       </section>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" placeholder="Input">
+        </div>
+      </div>
 
+      <div class="field">
+        <p class="control">
+          <span class="select">
+            <select>
+              <option>Select dropdown</option>
+            </select>
+          </span>
+        </p>
+      </div>
+
+      <div class="buttons">
+        <a class="button is-primary">Primary</a>
+        <a class="button is-link">Link</a>
       <!-- Favorites List for selected movie or tv show titles-->
       <section>
         
@@ -49,3 +67,5 @@
     </footer>
   </body>
 </html>
+
+
