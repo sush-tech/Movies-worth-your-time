@@ -2,16 +2,28 @@
 // Need to figure out how to use search input to change that variable
 // This is for the omdb api
 var genre_dropdown = document.getElementById("genre-select");
-var requestUrl = 'http://www.omdbapi.com/?t=Fast&Furious6&apikey=806e9e92';
+var movieTitle = document.querySelector('#movie-search');
+var titleSearch = document.querySelector('#searchbtn')
 
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log('Fetch Response \n-------------');
-    console.log(data);
-});
+var movieSearch = function (event) {
+  event.preventDefault();
+
+  var movie = movieTitle.value.trim();
+  var requestUrl = 'http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92';
+  if (movie != "") {
+    fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
+  }
+}
 
 
 //This is used to pull a list of movie genres from tmdb api
@@ -39,3 +51,5 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //u
       }
     })
     .catch(err => console.error(err));
+
+titleSearch.addEventListener('click', movieSearch);
