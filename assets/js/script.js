@@ -2,27 +2,17 @@
 // Need to figure out how to use search input to change that variable
 // This is for the omdb api
 var genre_dropdown = document.getElementById("genre-select");
-var requestUrl = 'http://www.omdbapi.com/?t=Fast&Furious6&apikey=806e9e92';
-
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log('Fetch Response \n-------------');
-    console.log(data);
-});
-
+var movieTitle = document.querySelector('#movie-search');
+var titleSearch = document.querySelector('#searchbtn');
+const options = {
+  method: 'GET',  //http method,GET PUT POST DELETE 
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzg5MzUzNzVhNGVmMTY0YWY0ZDliYTdhYWVhMGQ1YSIsInN1YiI6IjY1MTM4NTNmYzUwYWQyMDBjOTE4YzgzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SrcgoM8n2F5rggdya7kCA2Ca6_FV9OAtuXEkJpiXPBE'
+  }
+};
 
 //This is used to pull a list of movie genres from tmdb api
-const options = {
-    method: 'GET',  //http method,GET PUT POST DELETE 
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzg5MzUzNzVhNGVmMTY0YWY0ZDliYTdhYWVhMGQ1YSIsInN1YiI6IjY1MTM4NTNmYzUwYWQyMDBjOTE4YzgzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SrcgoM8n2F5rggdya7kCA2Ca6_FV9OAtuXEkJpiXPBE'
-    }
-};
-  
 fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //url endpoint
     .then(response => response.json())
     .then(response => {
@@ -34,8 +24,43 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //u
         // console.log(genres[i].name);
         var optionEl = document.createElement("option");
         optionEl.textContent = genres[i].name;
-        optionEl.value = genres[i].name;
+        optionEl.value = genres[i].id;
         genre_dropdown.append(optionEl);
       }
     })
     .catch(err => console.error(err));
+
+var movieSearch = function (event) {
+  event.preventDefault();
+
+  var movie = movieTitle.value.trim();
+  var genre = genre_dropdown.value;
+  var requestUrl = 'http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92';
+  if (movie != "") {
+    fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+  } else if (genre != "") {
+    fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=' + genre, options)
+    .then (function (response) {
+      return response.json();
+    })
+    .then (function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });  }
+}
+
+  
+
+
+titleSearch.addEventListener('click', movieSearch);
