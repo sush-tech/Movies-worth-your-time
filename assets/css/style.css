@@ -1,0 +1,23 @@
+#GFG {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#GFG::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    /* Specify the background image to be used */
+    background-image: url(
+'https://c8.alamy.com/comp/TB32J4/cinema-movie-concept-popcorn-and-clapperboard-on-a-grunge-background-TB32J4.jpg');
+    background-size: cover;
+
+    /* Specify the background image */
+    opacity: 0.2;
+}
