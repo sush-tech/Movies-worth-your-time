@@ -21,3 +21,11 @@
     /* Specify the background image */
     opacity: 0.2;
 }
+
+.main-nav {
+    /* attach navbar to bottom of page */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem 1.5rem 3rem;
+} 
