@@ -26,9 +26,9 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //u
       }
     })
     .catch(err => console.error(err));
-
+  
 // This will return information about whatever movie is searched using t=[movie_title].
-var movieSearch = function (event) {
+/*var movieSearch = function (event) {
   event.preventDefault();
 
   var movie = movieTitle.value.trim();
@@ -58,7 +58,7 @@ var movieSearch = function (event) {
     .catch(function (error) {
       console.error(error);
     });  }
-}
+}*/
 
 
 
