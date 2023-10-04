@@ -12,7 +12,7 @@ fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options)
 .then(data => 
   {
     console.log(data)
-    const movies = data.results;
+    const movie = data.results;
     const movieHolder = document.querySelector(".movieHolder");
     const movieData = document.createElement("div");
     movieData.classList.add("movieData");
