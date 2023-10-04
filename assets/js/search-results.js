@@ -1,6 +1,6 @@
 var backButton = document.getElementById('backbtn');
 var searchParams = new URLSearchParams(window.location.search);
-var movie = searchParams.get('movie');
+var movie = searchParams.get('q');
 
 fetch('http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92')
       .then(function (response) {
