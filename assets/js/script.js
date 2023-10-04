@@ -1,6 +1,3 @@
-// This will return information about whatever movie is searched using t=[movie_title] fast and furious 6 is an example.
-// Need to figure out how to use search input to change that variable
-// This is for the omdb api
 var genre_dropdown = document.getElementById("genre-select");
 var movieTitle = document.querySelector('#movie-search');
 var titleSearch = document.querySelector('#searchbtn');
@@ -30,6 +27,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //u
     })
     .catch(err => console.error(err));
 
+// This will return information about whatever movie is searched using t=[movie_title].
 var movieSearch = function (event) {
   event.preventDefault();
 
@@ -39,6 +37,8 @@ var movieSearch = function (event) {
   if (movie != "") {
     fetch(requestUrl)
     .then(function (response) {
+      var queryString = './search-results.html';
+      location.assign(queryString);
       return response.json();
     })
     .then(function (data) {
@@ -60,7 +60,7 @@ var movieSearch = function (event) {
     });  }
 }
 
-  
+
 
 
 titleSearch.addEventListener('click', movieSearch);

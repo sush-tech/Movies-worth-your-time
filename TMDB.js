@@ -23,7 +23,7 @@ fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options)
       //Pull in movie poster
       const moviePoster = document.createElement("img");
       moviePoster.classList.add("moviePoster");
-      moviePoster.src = ;
+      moviePoster.src = movie.poster_path;
       moviePoster.alt = movie.title;
 
       const rate = document.createElement("span");
