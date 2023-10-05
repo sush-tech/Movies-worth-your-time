@@ -1,6 +1,14 @@
 var genre_dropdown = document.getElementById("genre-select");
 var movieTitle = document.querySelector('#movie-search');
 var titleSearch = document.querySelector('#searchbtn');
+var clearSearch = document.querySelector('#clearbtn');
+
+var clearSearchFeilds = function (event) {
+  event.preventDefault();
+  if(movieTitle.value != "")
+      movieTitle.value ="";
+}
+ 
 const options = {
   method: 'GET',  //http method,GET PUT POST DELETE 
   headers: {
@@ -62,5 +70,5 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //u
 
 
 
-
+clearSearch.addEventListener('click', clearSearchFeilds);
 titleSearch.addEventListener('click', movieSearch);

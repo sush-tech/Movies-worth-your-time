@@ -4,13 +4,13 @@
     <title>Search Results</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        
+    <link rel="stylesheet" href="./assets/css/style.css"/>    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
 
   </head>
 
   <body>
-    <header class="title">
+    <header class="title" id="GFG">
         <h1>Search Results</h1>
     </header>
 
@@ -22,11 +22,19 @@
             <h2 id="critic-review"></h2>
         </div>
             <!-- button to go back to main page -->
-        <button id="backbtn">Back</button>
+        <button class="button is-primary" id="backbtn">Back</button>
     </main>
-    <footer>
+ 
+    <footer class="main-nav has-background-danger-dark">
+      <nav class="breadcrumb">
+        <ul>
+          <li><a class="title is-4 has-text-white-bis" href="index.html">Home</a></li>
+          <li><a class="title is-4 has-text-white-bis" href="favorites.html">Favorites</a></li>
 
+        </ul>
+      </nav>
     </footer>
+
     <script src="./assets/js/search.js"></script>
     <script src="./assets/js/search-results.js"></script>
   </body>
