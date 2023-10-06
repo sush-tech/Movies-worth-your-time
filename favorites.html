@@ -4,7 +4,7 @@
     <title>My Favorites</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="./assets/css/style.css"/>     
+    <link rel="stylesheet" href="./assets/css/style.css"/>        
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
     <script src="https://kit.fontawesome.com/ff50d05e86.js" crossorigin="anonymous"></script>
   </head>
@@ -15,15 +15,38 @@
     </header>
 
     <main>
-        <div class="favs-list">
-            <!-- list of favs goes here -->
-        </div>
-            <!-- button to go back to main page -->
-        <div class="buttons">
-          <a class="button is-primary">Back</a>
-          <a class="button is-link">Clear</a>
-        </div>
+      <div class="box">
+        <table class="favs-list table is-fullwidth">
+          <thead>
+            <tr>
+              <th><span>Title</span></th>
+              <th><span>Genre</span></th>
+              <th><span>Popularity</span></th>
+            </tr>
+          </thead>
+          <!-- list of favs goes inside the tbody tag-->
+          <tbody>
+            <!-- <tr>
+              <th>Movie Title</th>
+              <td>Genre</td>
+              <td>num</td>
+            </tr>
 
+            <tr>
+              <th>movie title</th>
+              <td>genre</td>
+              <td>num</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+          <!-- button to go back to main page -->
+        <div id="backbtn" class="buttons is-centered">
+          <a class="button is-primary">Back</a>
+          <!-- button to clear all localStorage -->
+          <a id="clearbtn" class="button is-link">Clear</a>
+        </div>
+      
     </main>
 
     <footer class="main-nav has-background-white">
@@ -46,6 +69,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/favorites.js"></script>
   </body>
 </html>
