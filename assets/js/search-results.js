@@ -27,12 +27,14 @@ fetch('http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92')
       })
       .catch(function (error) {
         console.error(error);
-      });
+});
 
 backButton.addEventListener("click", function() {
   window.location.href = "./index.html";
 });
 
-favoritesButton.addEventListener("clcik", function() {
-  
+favoritesButton.addEventListener("click", function() {
+  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  favorites.push(movie);
+  localStorage.setItem('favorites', JSON.stringify(favorites));
 });
