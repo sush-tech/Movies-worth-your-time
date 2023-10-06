@@ -1,4 +1,5 @@
 var backButton = document.getElementById('backbtn');
+var favoritesButton = document.getElementById('favoritesbtn')
 // Got this from the ai learning assistant
 var searchParams = new URLSearchParams(window.location.search);
 var movie = searchParams.get('q');
@@ -29,7 +30,9 @@ fetch('http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92')
       });
 
 backButton.addEventListener("click", function() {
-    window.location.href = "./index.html";
+  window.location.href = "./index.html";
 });
 
-
+favoritesButton.addEventListener("clcik", function() {
+  
+});
