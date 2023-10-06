@@ -25,7 +25,7 @@ var movieSearch = function (event) {
       .catch(function (error) {
         console.error(error);
       });
-        fetch(requestUrl2)
+      fetch(requestUrl2)
       .then(function (response) {
         return response.json();
       })
