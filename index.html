@@ -32,14 +32,14 @@
     <main>
       <!-- Search bar for movie or tv show titles-->
       <section>
-        <p class="subtitle">Enter a specific movie or tv show title. You can also search for a list of popular movies by genre.</p>
+        <p class="subtitle">Enter a specific movie or tv show title you're looking for</p>
       </section>
       <div class="field">
         <div class="control">
           <input id="movie-search" class="input" type="text" placeholder="enter the movie title here">
         </div>
       </div>
-
+      <p class="subtitle">or You can search for a list of popular movies by genre</p>
       <div class="field">
         <p class="control">
           <span class="select">
@@ -50,9 +50,13 @@
         </p>
       </div>
 
-      <div class="buttons">
-        <a id="searchbtn" class="button is-primary" type="submit">Submit</a>
-        <a class="button is-link" id="clearbtn">Clear</a>
+      <a class="control" id="searchbtn" href="search-results.html">
+        <span class="icon is-small">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+        <span>Search</span>
+      </a>
+      <a class="button is-link" id="clearbtn">Clear</a>      
       <!-- Favorites List for selected movie or tv show titles-->
       <section>
         
@@ -64,8 +68,7 @@
       </section>
     </main>
     
-    <footer class="main-nav has-background-white">
-      <nav class="navbar is-fixed-bottom">
+      <nav class="navbar is-fixed-bottom has-background-white">
           <div>
             <a href="index.html">
               <span class="icon is-small">
@@ -82,7 +85,53 @@
               <span>Favorites</span>
             </div>
       </nav>
-    </footer>
+      <footer class="footer control">
+        <div class="'container">
+          <div class="columns">
+            <div class="column is-4">
+              <h4 class="bd-footer-iframe">
+                <a href="index.html"><strong>Movies Worth Your Time</strong></a>
+                "by"
+                <a href="https://github.com/PurplePeopleEated">
+                    <span class="icon is-small">
+                      <i class="fa-brands fa-github"></i>
+                    </span>
+                    <span>Elliott</span>
+                </a>
+                <a href="https://github.com/sush-tech">
+                  <span class="icon is-small">
+                    <i class="fa-brands fa-github"></i>
+                  </span>
+                  <span>Sush</span>
+              </a>
+              <a href="https://github.com/Silverfoot42">
+                <span class="icon is-small">
+                  <i class="fa-brands fa-github"></i>
+                </span>
+                <span>Kara</span>
+              </a>
+              <a href="https://github.com/crashley12">
+                <span class="icon is-small">
+                  <i class="fa-brands fa-github"></i>
+                </span>
+                <span>Chris</span>
+              </a>
+            
+            </h4>
+              <div class="bd-footer-tsp">
+                "Source code licensed"
+                <a href="https://opensource.org/licenses/mit-license.php">MIT</a>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </footer>
     
     <script src="./assets/js/search.js"></script>
     <script src="./assets/js/script.js"></script>
