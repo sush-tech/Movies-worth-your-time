@@ -10,7 +10,7 @@ var movieSearch = function (event) {
     var movie = movieTitle.value.trim();
     var genre = genre_dropdown.value;
     var requestUrl = 'http://www.omdbapi.com/?t=' + movie + '&apikey=806e9e92';
-    var requestUrl2 = 'https://api.themoviedb.org/3/genre/movie/list?language=en' + movie + '&apikey=c78935375a4ef164af4d9ba7aaea0d5a'
+    var requestUrl2 = 'https://api.themoviedb.org/3/genre/movie/list?language=en' + movie;
 
     if (movie != "") {
       fetch(requestUrl)
@@ -19,8 +19,8 @@ var movieSearch = function (event) {
       })
       .then(function (data) {
         console.log(data);
-        var queryString = './search-results.html?q=' + encodeURIComponent(movie);
-        location.assign(queryString);
+        //var queryString = './search-results.html?q=' + encodeURIComponent(movie);
+        //location.assign(queryString);
       })
       .catch(function (error) {
         console.error(error);
@@ -31,8 +31,8 @@ var movieSearch = function (event) {
       })
       .then(function (data) {
         console.log(data);
-        var queryString = './search-results.html?q=' + encodeURIComponent(movie);
-        location.assign(queryString);
+        //var queryString = './search-results.html?q=' + encodeURIComponent(movie);
+        //location.assign(queryString);
       })
       .catch(function (error) {
         console.error(error);

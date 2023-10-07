@@ -1,5 +1,8 @@
 var backButton = document.getElementById('backbtn');
+var clearButton = document.getElementById('clearbtn')
 var favTable = document.getElementById('favorites-table')
+
+displayFavorites();
 
 // Function to display the list of favorited movie titles
 function displayFavorites() {
@@ -7,18 +10,16 @@ function displayFavorites() {
     var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   
     // Display the list of favorited movie titles on the favorites page
-    favorites.forEach(title => {
-      // Create a title element and attach an event listener
+    favorites.forEach(movie => {
+      var rowEl = document.createElement('tr')
       var titleElement = document.createElement('th');
-      titleElement.textContent = title;
+      titleElement.innerHTML = movie;
       titleElement.addEventListener('click', () => {
-        // Retrieve the movie data for the clicked title and display it
         var queryString = './search-results.html?q=' + encodeURIComponent(movie);
         location.assign(queryString);
       });
-  
-      // Append the title element to the favorites page
-      favTable.appendChild(titleElement);
+      favTable.appendChild(rowEl);
+      rowEl.appendChild(titleElement);
     });
 }
 
@@ -36,4 +37,10 @@ function displayFavorites() {
 
 backButton.addEventListener("click", function() {
     window.location.href = "./index.html";
+});
+
+clearButton.addEventListener("click", function() {
+    localStorage.clear();
+    favTable.remove();
+    favTable.innerHTML = "";
 });

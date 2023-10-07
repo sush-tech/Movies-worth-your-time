@@ -9,16 +9,21 @@ var clearSearchFeilds = function (event) {
       movieTitle.value ="";
 }
  
-const options = {
+/*const options = {
   method: 'GET',  //http method,GET PUT POST DELETE 
   headers: {
     accept: 'application/json',
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNzg5MzUzNzVhNGVmMTY0YWY0ZDliYTdhYWVhMGQ1YSIsInN1YiI6IjY1MTM4NTNmYzUwYWQyMDBjOTE4YzgzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SrcgoM8n2F5rggdya7kCA2Ca6_FV9OAtuXEkJpiXPBE'
   }
-};
+};*/
+
+fetch('https://api.themoviedb.org/3/authentication', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
 
 //This is used to pull a list of movie genres from tmdb api
-fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)  //url endpoint
+fetch('https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=c78935375a4ef164af4d9ba7aaea0d5a', options)  //url endpoint
     .then(response => response.json())
     .then(response => {
       //console.log(response)
