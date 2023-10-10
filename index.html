@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">    
     <script src="./assets/js/tmdbauth.js"></script>
     <script src="https://kit.fontawesome.com/ff50d05e86.js" crossorigin="anonymous"></script>
     <style>
@@ -32,7 +32,7 @@
 
     </div>
 
-    <nav id="navbar" class="bd-navbar navbar">
+    <nav id="navbar" class="bd-navbar navbar is-dark">
       <div class="navbar-brand">
           <div class="navbar-item">
             <a href="index.html">
@@ -52,17 +52,29 @@
           </div>
         </div>
       </nav>
-      <!-- Search bar for movie or tv show titles-->
+<!-- search movie by title -->
       <section>
         <h1 class="subtitle">Enter a specific movie or tv show title you're looking for</h1>
-      <div class="field">
-        <div class="control">
-          <input id="movie-search" class="input" type="text" placeholder="enter the movie title here">
-        </div>
-      </div>
-    </section>
+          <div class="field is-grouped">
+            <p class="control is-expanded">
+              <input class="input" id="movie-search" type="text" placeholder="Enter the movie title">
+            </p>
+            <p class="control">
+              <a class="button is-link" id="searchbtn">
+                <span class="icon is-small">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <span>Search</span>
+              </a>
+            </p>
+          </div>
+      </section>
+      <br>
+      <a class="button is-link" id="clearbtn">Clear</a> 
+      
+      <!-- Search bar for movie or tv show titles-->
      <!-- <p class="subtitle">or You can search for a list of popular movies by genre</p>-->
-     <section>
+     <section id="genre-select">
       <div class="field">
         <p class="control">
           <span class="select">
@@ -74,13 +86,10 @@
       </div>
     </section>
 
-      <a class="control" id="searchbtn">
-        <span class="icon is-small">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
-        <span>Search</span>
-      </a>
-      <a class="button is-link" id="clearbtn">Clear</a>      
+    
+      
+   
+           
       <!-- Favorites List for selected movie or tv show titles-->
       <section>
         
