@@ -65,3 +65,13 @@ clearButton.addEventListener("click", function() {
     favTable.remove();
     favTable.innerHTML = "";
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    const $notification = $delete.parentNode;
+
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});

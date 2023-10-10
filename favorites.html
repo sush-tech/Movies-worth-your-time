@@ -14,7 +14,7 @@
     <header class="title">
         <h1>My Favorites</h1>
     </header>
-    <nav id="navbar" class="bd-navbar navbar">
+    <nav id="navbar" class="bd-navbar navbar is-dark">
       <div class="navbar-brand">
           <div class="navbar-item">
             <a href="index.html">
@@ -35,17 +35,21 @@
         </div>
       </nav>
     <main>
+      <div class="notification is-info is-light">
+        <button class="delete"></button>
+        These are all the movies you have<strong> added to Favorites </strong>, please scroll down to view all.
+      </div>
       <div class="box">
-        <table class="favs-list table is-fullwidth">
+        <table class="favs-list table is-striped is-hoverable is-fullwidth">
           <thead>
             <tr>
-              <th><span>Title</span></th>
-              <th><span>Genre</span></th>
-              <th><span>TMDB Popularity</span></th>
+              <th  class="is-link"><span>Title</span></th>
+              <th  class="is-link"><span>Genre</span></th>
+              <th  class="is-link"><span>TMDB Popularity</span></th>
             </tr>
           </thead>
           <!-- list of favs goes inside the tbody tag-->
-          <tbody id="favorites-table">
+          <tbody id="favorites-table" class="is-gray">
             <!-- <tr>
               <th>Movie Title</th>
               <td>Genre</td>
