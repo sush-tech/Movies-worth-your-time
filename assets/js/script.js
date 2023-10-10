@@ -43,6 +43,15 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=c789353
   
 clearSearch.addEventListener('click', clearSearchFeilds);
 titleSearch.addEventListener('click', movieSearch);
+movieTitle.addEventListener('keydown', function(event)
+{
+  if (event.key === 'Enter') {
+    console.log("enter");
+    return movieSearch(event);
+  }
+
+});
+
 
 // fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=' + genre, options)
 //     .then(response => response.json())
