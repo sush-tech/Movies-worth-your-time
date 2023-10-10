@@ -1,3 +1,12 @@
+header{
+    font-family: 'Libre Baskerville', serif;
+}
+.footer {
+    background-color:white;
+}
+.navbar{
+    background-color:#222222;
+}
 #GFG {
     height: 20vh;
     display: flex;
@@ -14,8 +23,9 @@
     left: 0px;
 
     /* Specify the background image to be used */
-    background-image: url(
-'https://c8.alamy.com/comp/TB32J4/cinema-movie-concept-popcorn-and-clapperboard-on-a-grunge-background-TB32J4.jpg');
+    /* background-image: url(
+'https://c8.alamy.com/comp/TB32J4/cinema-movie-concept-popcorn-and-clapperboard-on-a-grunge-background-TB32J4.jpg'); */
+    
     background-size: cover;
 
     /* Specify the background image */
@@ -35,7 +45,10 @@
     width: 100%;
     height: 100%;
 }
-
+a img{
+    max-height: 10%;
+    max-width: 10%;
+}
 #genre-select {
     display: none;
 }

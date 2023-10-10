@@ -15,7 +15,26 @@
     <header class="title" id="GFG">
         <h1>Search Results</h1>
     </header>
-
+    <nav id="navbar" class="bd-navbar navbar">
+      <div class="navbar-brand">
+          <div class="navbar-item">
+            <a href="index.html">
+              <span class="icon is-large">
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </span>
+              <span>Home</span>
+            </a>
+          </div>
+          <div class="navbar-item">
+            <a href="favorites.html">
+              <span class="icon is-large">
+                <i class="fa-solid fa-heart" style="color: #b7384b;"></i>
+              </span>
+              <span>Favorites</span>
+            </a>
+          </div>
+        </div>
+      </nav>
     <main>
         <div class="movie-data">
             <!-- movieData does here -->
@@ -31,27 +50,18 @@
         <button class="button is-primary" id="backbtn">Back</button>
         <button class="button is-danger" id="favoritesbtn">Add to Favorites</button>
     </main>
- 
-    <footer class="main-nav has-background-white">
-      <nav class="navbar is-fixed-bottom">
-          <div>
-            <a href="index.html">
-              <span class="icon is-small">
-                <i class="fas fa-home" aria-hidden="true"></i>
-              </span>
-              <span>Home</span>
-            </a>
-          </div>
-          <div>
-            <a href="favorites.html">
-              <span class="icon is-small">
-                <i class="fa-solid fa-heart" style="color: #b7384b;"></i>
-              </span>
-              <span>Favorites</span>
-            </div>
-      </nav>
-    </footer>
-
+<!-- 
+    <section>
+      <div id="genre-results">
+        <h1 id="original_title"></h1>
+        <img id="poster">
+        <p id="plot"></p>
+        <h2 id="critic-review"></h2>
+        <h2 id="tomato-review"></h2>
+        <h2 id="imdb-review"></h2>
+        <h2 id="popularity"></h2>
+      </div>
+    </section> -->
     <script src="./assets/js/search.js"></script>
     <script src="./assets/js/search-results.js"></script>
   </body>

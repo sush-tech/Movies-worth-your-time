@@ -2,6 +2,7 @@ var genre_dropdown = document.getElementById("genre-select");
 var movieTitle = document.querySelector('#movie-search');
 var titleSearch = document.querySelector('#searchbtn');
 var clearSearch = document.querySelector('#clearbtn');
+// var genreSearch = document.querySelector('#genre-results');
 
 var clearSearchFeilds = function (event) {
   event.preventDefault();
@@ -42,3 +43,19 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=c789353
   
 clearSearch.addEventListener('click', clearSearchFeilds);
 titleSearch.addEventListener('click', movieSearch);
+
+// fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=' + genre, options)
+//     .then(response => response.json())
+//     .then(response => {
+//        var movies = response.movies;
+//        for( var i=0; i<movies.length ; i++)
+//        {
+//         var optionsEl = document.createElement("option");
+//         optionsEl.textContent = movies[i].title;
+//         genreSearch.append(optionsEl);
+//        }
+
+//       })
+//       .catch(function (error) {
+//         console.error(error);
+//       }); 
